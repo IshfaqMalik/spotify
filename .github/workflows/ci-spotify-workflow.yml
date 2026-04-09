@@ -35,5 +35,5 @@ jobs:
           name: coverage-html
           path: htmlcov
       
-        pytest \
+   
       
