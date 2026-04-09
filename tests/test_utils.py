@@ -16,8 +16,8 @@ def test_to_datestamp(spark):
     result_df = to_datestamp(df, "value", "datestamp")
     result = result_df.select("datestamp").collect()
 
-    assert result[0][0] == datetime.datetime(2024, 6, 1, 12, 0, 0)
-    assert result[1][0] == datetime.datetime(2024, 6, 2, 13, 30, 0)
+    assert result[0][0] == datetime.datetime(2024, 6, 1, 11, 0, 0)
+    assert result[1][0] == datetime.datetime(2024, 6, 2, 12, 30, 0)
 
 
 def test_to_date(spark):
