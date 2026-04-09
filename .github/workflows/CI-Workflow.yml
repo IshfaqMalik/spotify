@@ -28,7 +28,7 @@ jobs:
       - name: Run pytest @generate HTML report
         run:
           pytest \
-          disable-warnings \
+          --disable-warnings \
           --cov=src \
           --cov-report=html 
       - name: Upload a Build Artifact
