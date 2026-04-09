@@ -1,0 +1,39 @@
+name: CI WORKFLOW 
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+  pull_request:
+    branches:
+      - 'main'
+jobs:
+  CI-Workflow:
+    name: CI-Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout-Code
+        uses: actions/checkout@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install-Dependencies
+        run: |
+          python3 -m pip install --upgrade
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+      - name: Run pytest @generate HTML report
+        run: |
+          pytest \
+          disable-warnings \
+          --cov=src \
+          --cov-report=html
+      - name: Upload-generated-report 
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-html
+          path: htmlcov
+      
+        pytest \
+      
