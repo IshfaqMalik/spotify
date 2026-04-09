@@ -26,9 +26,9 @@ jobs:
            pip install -r requirements.txt
            pip install pytest pytest-cov
       - name: Run pytest @generate HTML report
-        run:
+        run: |
           pytest \
-          bisable-warnings \
+          --disable-warnings \
           --cov=src \
           --cov-report=html 
       - name: Upload a Build Artifact
