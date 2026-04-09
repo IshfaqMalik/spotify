@@ -1,0 +1,12 @@
+variables:
+  ds3_v3_std:
+    type: complex
+    default:
+      cluster_name: ""
+      spark_version: 16.4.x-scala2.13
+      node_type_id: Standard_DS3_v2
+      spark_env_vars:
+      data_security_mode: DATA_SECURITY_MODE_STANDARD
+      runtime_engine: PHOTON
+      kind: CLASSIC_PREVIEW
+      is_single_node: true
