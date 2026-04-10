@@ -59,7 +59,7 @@ jobs:
       - name: Configure Databricks 
         run: |
           cat <<EOF > ~/.databrickscfg
-          host = https://adb-7405607648433478.18.azuredatabricks.net
+          host = https://adb-7405609543179080.0.azuredatabricks.net
           azure_client_id = ${{secrets.AZURE_CLIENT_ID}}
           azure_tenant_id = ${{secrets.AZURE_TENANT_ID}}
           azure_client_secret = ${{secrets.AZURE_CLIENT_SECRET}}
