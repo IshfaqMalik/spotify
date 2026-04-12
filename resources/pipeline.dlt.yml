@@ -1,0 +1,19 @@
+resources:
+  pipelines:
+    spotify_dlt_pipeline:
+      name: spotify_dlt_pipeline
+      configuration:
+        catalog: "${var.catalog}"  
+      libraries:
+        - file:
+            path: ../spotify_pipeline/DLT/bronze/bronze_ingestion.py
+        - file:
+            path: ../spotify_pipeline/DLT/silver/silver_ingestion.py
+        - file:
+            path: ../spotify_pipeline/DLT/gold/gold_views.py
+      schema: default 
+      development: "${var.dev_flag}"
+      photon: true
+      catalog: "${var.catalog}"
+      serverless: true  
+        
